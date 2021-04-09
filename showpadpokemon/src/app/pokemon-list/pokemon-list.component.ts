@@ -1,3 +1,5 @@
+import { pokemoncard } from './../pokemoncard';
+import { PokeapiService } from './../pokeapi.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit {
 
-  constructor() { }
+  pokemoncard : pokemoncard[] = [];
+
+  constructor(private pokeApi : PokeapiService) { }
 
   ngOnInit(): void {
+    this.pokeApi.getListPokemon().subscribe((data) => {
+      this.pokemoncard = data.results;
+    });
   }
 
 }

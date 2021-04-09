@@ -7,6 +7,7 @@ import { PokemonWelcomeComponent } from './pokemon-welcome/pokemon-welcome.compo
 import { PokemonNotFoundComponent } from './pokemon-not-found/pokemon-not-found.component';
 import { PokemonNavBarComponent } from './pokemon-nav-bar/pokemon-nav-bar.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
