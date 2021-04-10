@@ -22,4 +22,15 @@ describe('PokemonWishListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('test resetWishList() after removing all item and confirm yes', () => {
+    let beforeCount = component.wishlist.length;
+    component.resetWishList();
+    let afterCount = component.wishlist.length;
+    console.log(beforeCount);
+    console.log(afterCount);
+    expect(afterCount).toEqual(0);
+  });
+
 });
