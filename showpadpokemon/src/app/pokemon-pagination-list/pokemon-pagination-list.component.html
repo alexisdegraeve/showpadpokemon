@@ -1,11 +1,11 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item" [ngClass]="{'disabled': currentPage === 1}"><a class="page-link" (click)="calcPreviousNextPage()">Previous</a></li>
+    <li class="page-item" [ngClass]="{'disabled': currentPage === 1}"><a  [ngClass]="{'cursor-pointer': currentPage !==1}"  class="page-link" (click)="calcPreviousNextPage()">Previous</a></li>
 
     <li class="page-item" [ngClass]="{'active': currentPage === (ind+1)}" *ngFor="let nb of [].constructor(totalPage); let ind = index">
-      <a class="page-link" (click)="calcCurrentPage(ind+1)">{{(ind+1)}}</a>
+      <a class="page-link cursor-pointer" (click)="calcCurrentPage(ind+1)">{{(ind+1)}}</a>
     </li>
 
-    <li class="page-item" [ngClass]="{'disabled': currentPage === totalPage}"><a class="page-link" (click)="calcNextPage()">Next</a></li>
+    <li class="page-item" [ngClass]="{'disabled': currentPage === totalPage}"><a [ngClass]="{'cursor-pointer': currentPage !== totalPage}" class="page-link" (click)="calcNextPage()">Next</a></li>
   </ul>
 </nav>

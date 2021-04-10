@@ -14,6 +14,7 @@ import { PokemonCaughtComponent } from './pokemon-caught/pokemon-caught.componen
 import { PokemonWishListComponent } from './pokemon-wish-list/pokemon-wish-list.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { PokemonFooterComponent } from './pokemon-footer/pokemon-footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RouterModule } from '@angular/router';
     PokemonDetailComponent,
     PokemonCaughtComponent,
     PokemonWishListComponent,
+    PokemonFooterComponent,
   ],
   imports: [
     BrowserModule,
