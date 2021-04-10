@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-caught',
@@ -11,6 +11,20 @@ export class PokemonCaughtComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+      let tmpcaughtlist = localStorage.getItem("pokemon_caughtlist");
+      if(tmpcaughtlist) {
+        const data = JSON.parse(tmpcaughtlist);
+        this.caughtlist = data;
+      }
+
   }
+
+  deletePokemon(caughtPokemon : string) {
+    console.log(caughtPokemon);
+    this.caughtlist = this.caughtlist.filter(e => e !== caughtPokemon);
+    localStorage.setItem('pokemon_caughtlist', JSON.stringify(this.caughtlist));
+  }
+
 
 }

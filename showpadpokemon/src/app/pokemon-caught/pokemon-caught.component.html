@@ -2,11 +2,16 @@
   <thead>
     <tr>
       <th scope="col">Name</th>
+      <td></td>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let caught of caughtlist">
       <td>{{ caught }}</td>
+      <td><a class="btn" (click)="deletePokemon(caught)">
+          <i class="bi bi-trash pointer"></i>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>

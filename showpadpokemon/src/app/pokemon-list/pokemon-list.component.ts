@@ -28,6 +28,24 @@ export class PokemonListComponent implements OnInit {
       this.totalPageCalc = Math.round(this.totalPokemon/ this.totalPokemonPage);
       this.pokemoncard = data.results;
     });
+    this.initCaughtList();
+    this.initWishList();
+  }
+
+  initCaughtList() {
+    let tmpcaughtlist = localStorage.getItem("pokemon_caughtlist");
+    if(tmpcaughtlist) {
+      const data = JSON.parse(tmpcaughtlist);
+      this.caughtlist = data;
+    }
+  }
+
+  initWishList() {
+    let tmpwishlist = localStorage.getItem("pokemon_wishlist");
+    if(tmpwishlist) {
+      const data = JSON.parse(tmpwishlist);
+      this.wishlist = data;
+    }
   }
 
   goToNewPage(page: number): void {
@@ -51,10 +69,10 @@ export class PokemonListComponent implements OnInit {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     if(this.wishlist.filter(value => value == data).length == 0) {
-
-
       if(this.caughtlist.filter(value => value == data).length == 0) {
         this.wishlist.push(data);
+        this.wishlist = [...this.wishlist];
+        localStorage.setItem('pokemon_wishlist', JSON.stringify(this.wishlist));
       } else {
         this.alreadyCaught  = true;
       }
@@ -71,10 +89,14 @@ export class PokemonListComponent implements OnInit {
     var data = ev.dataTransfer.getData("text");
     if(this.caughtlist.filter(value => value == data).length == 0) {
       this.caughtlist.push(data);
+      this.caughtlist = [...this.caughtlist];
+      localStorage.setItem('pokemon_caughtlist', JSON.stringify(this.caughtlist));
     } else {
       this.alreadyCaughtList  = true;
     }
 
   }
+
+
 
 }
