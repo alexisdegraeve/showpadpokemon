@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="card w-100" *ngIf="pokemonFigure">
+    <img class="card-img-top pokemon-avatar" [src]="pokemonFigure.sprites.front_default" alt="Card image cap">
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card-body">
+          <h5 class="card-title text-danger">Name: {{ pokemonFigure?.name }}</h5>
+          <p class="card-text text-danger">
+            Height: {{ pokemonFigure?.height}} <br />
+            Order: {{ pokemonFigure?.order}}</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h5 class="card-title  text-info">Abilities</h5>
+        <ul class="list-group list-group-flush  text-info">
+          <li class="list-group-item" *ngFor="let abilities of pokemonFigure.abilities"> {{abilities.ability.name }}</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="card-body">
+      <a [routerLink]="['/pokedex']">Go Back</a>
+    </div>
+
+  </div>
+
+
+</div>
+

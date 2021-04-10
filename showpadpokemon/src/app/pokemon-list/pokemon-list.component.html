@@ -1,10 +1,7 @@
+<button type="button" class="btn btn-info pokemon-blue-button m-2" *ngFor="let pokecard of pokemoncard" [routerLink]="['/pokemondetail', pokecard.name]">{{pokecard.name}}</button>
 
-<div class="card-columns">
 
-  <div class="card px-1" *ngFor="let pokecard of pokemoncard">
-    <div class="card-body">
-      <h6 class="card-title">{{pokecard.name}}</h6>
-    </div>
-  </div>
 
-</div>
+
+
+<app-pokemon-pagination-list  [totalPage]="totalPageCalc" [currentPage]="1"  (changePage)="goToNewPage($event)"></app-pokemon-pagination-list>

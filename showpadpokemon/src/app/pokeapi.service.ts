@@ -7,11 +7,18 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root',
 })
 export class PokeapiService {
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient) {
+  }
 
-  getListPokemon() : Observable<any> {
-    let url = 'https://pokeapi.co/api/v2/pokemon';
 
+  getListPokemon(limit: number, offset :number) : Observable<any> {
+    let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+    return this._httpClient.get(url);
+  }
+
+
+  getDetailPokemon(pokemonname: string) : Observable<any> {
+    let url = `https://pokeapi.co/api/v2/pokemon/${pokemonname}`;
     return this._httpClient.get(url);
   }
 }

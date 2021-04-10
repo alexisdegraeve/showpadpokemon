@@ -8,6 +8,8 @@ import { PokemonNotFoundComponent } from './pokemon-not-found/pokemon-not-found.
 import { PokemonNavBarComponent } from './pokemon-nav-bar/pokemon-nav-bar.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonPaginationListComponent } from './pokemon-pagination-list/pokemon-pagination-list.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     PokemonWelcomeComponent,
     PokemonNotFoundComponent,
     PokemonNavBarComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    PokemonPaginationListComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
