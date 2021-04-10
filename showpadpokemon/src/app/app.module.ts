@@ -10,6 +10,8 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonPaginationListComponent } from './pokemon-pagination-list/pokemon-pagination-list.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { PokemonCaughtComponent } from './pokemon-caught/pokemon-caught.component';
+import { PokemonWishListComponent } from './pokemon-wish-list/pokemon-wish-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
     PokemonNavBarComponent,
     PokemonListComponent,
     PokemonPaginationListComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    PokemonCaughtComponent,
+    PokemonWishListComponent
   ],
   imports: [
     BrowserModule,

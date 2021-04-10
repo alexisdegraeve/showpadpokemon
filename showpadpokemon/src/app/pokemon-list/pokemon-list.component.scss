@@ -7,3 +7,34 @@
 .pokemon-blue-button:hover {
   background-color: orange;
 }
+
+.dragsource {
+  background-color: red;
+  height: 200px;
+  width: 200px;
+}
+
+.dragtarget {
+  background-color: magenta;
+  height: 200px;
+  width: 600px;
+}
+
+.pokemon-wish-basket {
+  color: orange;
+  text-align: center;
+  .bi-archive {
+    font-size: 80px;
+
+  }
+}
+
+
+.pokemon-caught-basket {
+  color: red;
+  text-align: center;
+  .bi-archive {
+    font-size: 80px;
+
+  }
+}

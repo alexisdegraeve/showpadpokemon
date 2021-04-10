@@ -13,6 +13,11 @@ export class PokemonListComponent implements OnInit {
   totalPageCalc: number = 0;
   totalPokemon: number = 0;
   totalPokemonPage: number = 70;
+  wishlist :string [] = [];
+  caughtlist :string [] = [];
+  alreadyWishList: boolean = false;
+  alreadyCaughtList: boolean = false;
+  alreadyCaught: boolean = false;
 
   constructor(private pokeApi : PokeapiService) { }
 
@@ -31,6 +36,45 @@ export class PokemonListComponent implements OnInit {
     this.pokeApi.getListPokemon(this.totalPokemonPage, offset).subscribe((data) => {
       this.pokemoncard = data.results;
     });
+  }
+
+  allowDrop(ev: any) {
+    var data = ev.dataTransfer.getData("text");
+    ev.preventDefault();
+  }
+
+  drag(ev: any, nompokemon: string) {
+    ev.dataTransfer.setData("text/plain", nompokemon);
+  }
+
+  drop_wishlist(ev: any) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    if(this.wishlist.filter(value => value == data).length == 0) {
+
+
+      if(this.caughtlist.filter(value => value == data).length == 0) {
+        this.wishlist.push(data);
+      } else {
+        this.alreadyCaught  = true;
+      }
+
+    } else {
+      this.alreadyWishList = true;
+    }
+
+
+  }
+
+  drop_pokemonlist(ev: any) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    if(this.caughtlist.filter(value => value == data).length == 0) {
+      this.caughtlist.push(data);
+    } else {
+      this.alreadyCaughtList  = true;
+    }
+
   }
 
 }
