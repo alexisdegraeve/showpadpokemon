@@ -23,5 +23,10 @@ export class PokemonWishListComponent implements OnInit {
     localStorage.setItem('pokemon_wishlist', JSON.stringify(this.wishlist));
   }
 
-
+  resetWishList() {
+    if(confirm("Are you sure to delete all the wish list? ")) {
+      this.wishlist = [];
+      localStorage.setItem('pokemon_wishlist', '');
+    }
+  }
 }

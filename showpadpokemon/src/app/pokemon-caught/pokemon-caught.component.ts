@@ -25,5 +25,11 @@ export class PokemonCaughtComponent implements OnInit {
     localStorage.setItem('pokemon_caughtlist', JSON.stringify(this.caughtlist));
   }
 
+  resetCaughtList() {
+    if(confirm("Are you sure to delete all the caught list? ")) {
+      this.caughtlist = [];
+      localStorage.setItem('pokemon_caughtlist', '');
+    }
+  }
 
 }
