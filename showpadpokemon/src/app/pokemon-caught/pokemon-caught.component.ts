@@ -21,7 +21,6 @@ export class PokemonCaughtComponent implements OnInit {
   }
 
   deletePokemon(caughtPokemon : string) {
-    console.log(caughtPokemon);
     this.caughtlist = this.caughtlist.filter(e => e !== caughtPokemon);
     localStorage.setItem('pokemon_caughtlist', JSON.stringify(this.caughtlist));
   }

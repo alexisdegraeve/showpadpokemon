@@ -16,19 +16,16 @@ export class PokemonPaginationListComponent implements OnInit {
   }
 
   calcCurrentPage(page :number) {
-    console.log('this.calcCurrentPage');
     this.currentPage = page;
     this.changePage.emit(this.currentPage);
   }
 
   calcNextPage() {
-    console.log('this.calcNextPage');
     this.currentPage +=1;
     this.changePage.emit(this.currentPage);
   }
 
   calcPreviousNextPage() {
-    console.log('this.calcPreviousNextPage');
     this.currentPage -=1;
     this.changePage.emit(this.currentPage);
   }

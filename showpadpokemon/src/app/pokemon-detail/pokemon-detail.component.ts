@@ -19,12 +19,10 @@ export class PokemonDetailComponent implements OnInit {
     if(pokemonname === null) {
       pokemonname = '';
     }
-    console.log(pokemonname);
 
     this.pokeApi.getDetailPokemon(pokemonname).subscribe((data) => {
 
       this.pokemonFigure = data;
-      console.log(data);
 
     });
   }
