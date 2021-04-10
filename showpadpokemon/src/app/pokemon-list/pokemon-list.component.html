@@ -1,3 +1,11 @@
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchPokemon" id="isearchpokemon" name="isearchpokemon" (ngModelChange)="updateList()">
+
+    <span class="ml-2 text-muted">Only search in the current page for performance</span>
+  </form>
+</nav>
+
 <button type="button" class="btn btn-info pokemon-blue-button m-2" draggable="true"
   (dragstart)="drag($event, pokecard.name)" *ngFor="let pokecard of pokemoncard"
   [routerLink]="['/pokemondetail', pokecard.name]">{{pokecard.name}}</button>

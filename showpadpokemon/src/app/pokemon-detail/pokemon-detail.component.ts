@@ -10,7 +10,7 @@ import { PokeapiService } from '../pokeapi.service';
 })
 export class PokemonDetailComponent implements OnInit {
 
-  public pokemonFigure: pokemondetail  = {abilities: [{ability : {name:'', url:'' }}], height:0,name:'', order:0,weight: 10, sprites: {front_default:''}};
+  public pokemonFigure: pokemondetail  = {abilities: [{ability : {name:'', url:'' }}], stats: [{base_stat:0 ,stat : {name:'', url:'' }}], height:0,name:'', order:0,weight: 10, sprites: {front_default:''}};
 
   constructor(private route: ActivatedRoute, private pokeApi : PokeapiService) { }
 

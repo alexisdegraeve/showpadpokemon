@@ -12,6 +12,7 @@ import { PokemonPaginationListComponent } from './pokemon-pagination-list/pokemo
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { PokemonCaughtComponent } from './pokemon-caught/pokemon-caught.component';
 import { PokemonWishListComponent } from './pokemon-wish-list/pokemon-wish-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,16 @@ import { PokemonWishListComponent } from './pokemon-wish-list/pokemon-wish-list.
     PokemonPaginationListComponent,
     PokemonDetailComponent,
     PokemonCaughtComponent,
-    PokemonWishListComponent
+    PokemonWishListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+  ],
+  exports: [
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

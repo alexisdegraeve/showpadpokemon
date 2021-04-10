@@ -15,11 +15,16 @@
         <h5 class="card-title  text-info">Abilities</h5>
         <ul class="list-group list-group-flush  text-info">
           <li class="list-group-item" *ngFor="let abilities of pokemonFigure.abilities"> {{abilities.ability.name }}</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
         </ul>
 
-
+        <h5 class="card-title  text-success">Stats</h5>
+        <ul class="list-group list-group-flush  text-info">
+          <li class="list-group-item" *ngFor="let stats of pokemonFigure.stats"> {{stats.stat.name }}
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [style.width]="stats.base_stat + '%'" aria-valuemin="0" aria-valuemax="100">{{ stats.base_stat }}%</div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 

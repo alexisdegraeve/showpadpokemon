@@ -1,13 +1,20 @@
-
 export interface pokemondetail {
-  abilities: [ {
-          ability : {
-            name: string,
-            url: string
-          }
-     }
-  /*  {  ability: [name: string,
-    url: string] } */
+  abilities: [
+    {
+      ability: {
+        name: string;
+        url: string;
+      };
+    }
+  ];
+  stats: [
+    {
+      base_stat: number,
+      stat: {
+        name: string;
+        url: string;
+      };
+    }
   ];
   name: string;
   weight: number;
@@ -15,5 +22,5 @@ export interface pokemondetail {
   height: number;
   sprites: {
     front_default: string;
-  }
+  };
 }

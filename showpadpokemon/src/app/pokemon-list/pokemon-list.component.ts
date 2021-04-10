@@ -18,10 +18,15 @@ export class PokemonListComponent implements OnInit {
   alreadyWishList: boolean = false;
   alreadyCaughtList: boolean = false;
   alreadyCaught: boolean = false;
+  searchPokemon: string = '';
 
   constructor(private pokeApi : PokeapiService) { }
 
   ngOnInit(): void {
+    this.reset();
+  }
+
+  reset() {
     this.pokeApi.getListPokemon(this.totalPokemonPage,0).subscribe((data) => {
       console.log(data);
       this.totalPokemon = data.count;
@@ -97,6 +102,18 @@ export class PokemonListComponent implements OnInit {
 
   }
 
+  updateList() {
+    if(this.searchPokemon=='') {
+      this.reset();
+    } else {
+      this.pokemoncard = this.pokemoncard.filter((poke) => poke.name.toLowerCase().includes(this.searchPokemon.toLowerCase()));
+    }
 
+  }
+
+  resetSearch() {
+    this.searchPokemon = '';
+    this.reset();
+  }
 
 }
