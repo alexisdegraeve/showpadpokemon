@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { PokeapiService } from './pokeapi.service';
@@ -6,7 +7,11 @@ describe('PokeapiService', () => {
   let service: PokeapiService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+      providers: [PokeapiService]
+
+    });
     service = TestBed.inject(PokeapiService);
   });
 

@@ -13,6 +13,7 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 import { PokemonCaughtComponent } from './pokemon-caught/pokemon-caught.component';
 import { PokemonWishListComponent } from './pokemon-wish-list/pokemon-wish-list.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
